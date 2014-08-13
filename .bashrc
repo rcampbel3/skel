@@ -40,7 +40,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -54,9 +54,19 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    if [ "$NICKNAME" != "" ]; then
+#       PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@$NICKNAME\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+        PS1='\[\033]0;\w\007\]\[\e[35;1m\]\u\[\e[0m\]\[\e[32m\]@$NICKNAME\[\e[34m\]\w \[\e[33m\]\$ \[\e[0m\]'
+    else
+#       PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+        PS1='\[\033]0;\w\007\]\[\e[35;1m\]\u\[\e[0m\]\[\e[32m\]@\h\[\e[34m\]\w \[\e[33m\]\$ \[\e[0m\]'
+    fi
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    if [ "$NICKNAME" != "" ]; then
+        PS1='${debian_chroot:+($debian_chroot)}\u@$NICKNAME:\w\$ '
+    else
+        PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    fi
 fi
 unset color_prompt force_color_prompt
 
@@ -105,3 +115,10 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+###
+# Vetter customizations below
+#
+# use vi keybindings on commandline
+set -o vi
+# force default editor to vim for this user
+export EDITOR=vim
