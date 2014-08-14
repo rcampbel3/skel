@@ -6,11 +6,18 @@ set synmaxcol=240
 set nocompatible	" Use Vim defaults instead of 100% vi compatibility
 set backspace=indent,eol,start	" more powerful backspacing
 " Sets how many lines of history VIM has to remember
-set history=700
+set history=1000
+set undolevels=1000
 
 " Enable filetype plugins
 filetype plugin on
 "filetype indent on
+
+set hidden
+" never ever let vim write a backup file! Use modern ways for tracking your
+" changes!
+set nobackup
+set noswapfile
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -21,7 +28,7 @@ set ruler		" show the cursor position all the time
 set wildmenu
 
 " Ignore compiled files
-set wildignore=*.o,*~,*.pyc
+set wildignore=*.o,*~,*.pyc,*.swp,*.class
 
 " Ignore case when searching
 set ignorecase
