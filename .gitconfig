@@ -1,2 +1,4 @@
 [http]
 	sslverify = false
+[color]
+	ui = auto
