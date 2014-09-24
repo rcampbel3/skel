@@ -56,10 +56,10 @@ fi
 if [ "$color_prompt" = yes ]; then
     if [ "$NICKNAME" != "" ]; then
 #       PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@$NICKNAME\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-        PS1='\[\033]0;\w\007\]\[\e[35;1m\]\u\[\e[0m\]\[\e[32m\]@$NICKNAME\[\e[34m\]\w \[\e[33m\]\$ \[\e[0m\]'
+	PS1='\[\033]0;\w\007\]\[\e[35;1m\]\u\[\e[0m\]\[\e[37m\]@\[\e[32m\]$NICKNAME\[\e[33m\]:\[\e[34;1m\]\w \[\e[33m\]\$ \[\e[0m\]'
     else
 #       PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-        PS1='\[\033]0;\w\007\]\[\e[35;1m\]\u\[\e[0m\]\[\e[32m\]@\h\[\e[34m\]\w \[\e[33m\]\$ \[\e[0m\]'
+	PS1='\[\033]0;\w\007\]\[\e[35;1m\]\u\[\e[0m\]\[\e[37m\]@\[\e[32m\]\h\[\e[33m\]:\[\e[34;1m\]\w \[\e[33m\]\$ \[\e[0m\]'
     fi
 else
     if [ "$NICKNAME" != "" ]; then
