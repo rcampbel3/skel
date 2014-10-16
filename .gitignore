@@ -40,9 +40,9 @@ CVS
 node_modules
 
 # custom
-.ssh/authorized_keys
-.ssh/authorized_keys2
-.ssh/config
-.ssh/id_dsa
-.ssh/known_hosts
+#.ssh/authorized_keys
+#.ssh/authorized_keys2
+#.ssh/config
+#.ssh/id_dsa
+#.ssh/known_hosts
 bin/custom
