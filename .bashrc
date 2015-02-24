@@ -13,8 +13,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000
+HISTFILESIZE=10000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -125,3 +125,6 @@ export EDITOR=vim
 # Set better prompt for mysql
 MYSQL_PS1='\033]0;MySQL \h:\p (\d)\007\e[0;31m\h\e[0m (\p)\n\d> ' 
 export MYSQL_PS1=`echo -e "$MYSQL_PS1"`
+# set better color default for hh/hstr - enhanced history tool
+# http://tuxdiary.com/2015/02/17/hstr/
+export HH_CONFIG=hicolor
