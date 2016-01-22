@@ -128,3 +128,7 @@ export MYSQL_PS1=`echo -e "$MYSQL_PS1"`
 # set better color default for hh/hstr - enhanced history tool
 # http://tuxdiary.com/2015/02/17/hstr/
 export HH_CONFIG=hicolor
+# if vimpager exists, use it for pager:
+if command -v vimpager > /dev/null; then
+    export PAGER=$(which vimpager)
+fi
