@@ -126,9 +126,10 @@ export EDITOR=vim
 MYSQL_PS1='\033]0;MySQL \h:\p (\d)\007\e[0;31m\h\e[0m (\p)\n\d> ' 
 export MYSQL_PS1=`echo -e "$MYSQL_PS1"`
 # set better color default for hh/hstr - enhanced history tool
-# http://tuxdiary.com/2015/02/17/hstr/
+# https://github.com/dvorka/hstr
 export HH_CONFIG=hicolor
+export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"   # mem/file sync
 # if vimpager exists, use it for pager:
 if command -v vimpager > /dev/null; then
-    export PAGER=$(which vimpager)
+    export PAGER=$(which vimpager);
 fi
