@@ -123,8 +123,9 @@ set -o vi
 # force default editor to vim for this user
 export EDITOR=vim
 # Set better prompt for mysql
-MYSQL_PS1='\033]0;MySQL \h:\p (\d)\007\e[0;31m\h\e[0m (\p)\n\d> ' 
-export MYSQL_PS1=`echo -e "$MYSQL_PS1"`
+# colors don't work in mysql >= 5.6 :( - https://bugs.mysql.com/bug.php?id=79755
+#MYSQL_PS1='\033]0;MySQL \h:\p (\d)\007\e[0;31m\h\e[0m (\p)\n\d> ' 
+export MYSQL_PS1=$(echo -e "\033]0;\u@\h [\d]\007\u@\h [\d]> ")
 # set better color default for hh/hstr - enhanced history tool
 # https://github.com/dvorka/hstr
 export HH_CONFIG=hicolor
