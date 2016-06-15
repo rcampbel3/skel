@@ -136,6 +136,7 @@ fi
 set -o vi
 # force default editor to vim for this user
 export EDITOR=vim
+export VISUAL="$EDITOR"
 # Set better prompt for mysql
 # colors don't work in mysql >= 5.6 :( - https://bugs.mysql.com/bug.php?id=79755
 export MYSQL_PS1="(\u@\h) [\d]> "
