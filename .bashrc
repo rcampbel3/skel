@@ -148,3 +148,6 @@ export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"   # mem/file s
 if command -v vimpager > /dev/null; then
     export PAGER=$(which vimpager);
 fi
+# increase scrollback buffer in tmux sessions
+set-option -g history-limit 10000
+set -g history-limit 10000
