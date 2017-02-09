@@ -149,5 +149,5 @@ if command -v vimpager > /dev/null; then
     export PAGER=$(which vimpager);
 fi
 # increase scrollback buffer in tmux sessions
-set-option -g history-limit 10000
-set -g history-limit 10000
+#set-option history-limit 10000
+set history-limit 10000
