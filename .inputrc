@@ -7,6 +7,6 @@ set show-all-if-ambiguous on
 # Set readline to display possible completions using different colors to indicate their file types. The colors are determined by the environmental variable LS_COLORS
 set colored-stats on
 # Set every completion which is a symbolic link to a directory to have a slash appended
-set marked-symlinked-directories on
+#set marked-symlinked-directories on
 # Set completions to be appended by characters that indicate their file types reported by the stat system call
 set visible-stats on
