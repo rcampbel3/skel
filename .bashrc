@@ -152,7 +152,9 @@ fi
 #set-option history-limit 10000
 set history-limit 10000
 # enable fzf 'fuzzy find' completion/multiselect with **<tab> - example: cat **<tab>
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+if command -v fzf > /dev/null; then
+    source ~/.fzf.bash;
+fi
 # if ncdu exists, enable colors:
 if command -v ncdu  > /dev/null; then
     alias ncdu='ncdu --color dark';
